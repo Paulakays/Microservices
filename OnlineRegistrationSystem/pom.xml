@@ -12,7 +12,7 @@
 		<!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.studiosus.trainee</groupId>
-	<artifactId>OnlineRegistrationSystem</artifactId>
+	<artifactId>online-registration-system</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>OnlineRegistrationSystem</name>
 	<description>Demo project for Spring Boot</description>
@@ -34,9 +34,9 @@
 	</properties>
 	<packaging>pom</packaging>
 	<modules>
-		<module>courseservice</module>
-		<module>studentservice</module>
-		<module>registrationservice</module>
+		<module>course-service</module>
+		<module>student-service</module>
+		<module>registration-service</module>
 	</modules>
 	<dependencies>
 		<dependency>
@@ -50,6 +50,7 @@
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
+			<version>42.7.7</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -1,16 +1,16 @@
 spring:
   profiles:
-    active: courseservice
+    active: registration-service
 
 ---
 
 spring:
   config:
     activate:
-      on-profile: courseservice
+      on-profile: registration-service
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/coursedb
+    url: jdbc:postgresql://localhost:5432/registrationdb
     username: postgres
     password: 2001
     driver-class-name: org.postgresql.Driver
@@ -24,5 +24,9 @@ spring:
         format_sql: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
+student:
+  service:
+    url: http://student-service:8081
+
 server:
-  port: 8082
+  port: 8083
