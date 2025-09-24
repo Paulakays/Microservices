@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  student-service:
+    build: ./student-service
+    ports:
+      - "8081:8081"
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://host.docker.internal:5432/studentdb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 2001
+
+  registration-service:
+    build: ./registration-service
+    ports:
+      - "8083:8083"
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://host.docker.internal:5432/registrationdb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 2001
+      SPRING_PROFILES_ACTIVE: registration-service
+
+  course-service:
+    build: ./course-service
+    ports:
+      - "8082:8082"
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://host.docker.internal:5432/coursedb
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 2001
+      SPRING_PROFILES_ACTIVE: course-service
